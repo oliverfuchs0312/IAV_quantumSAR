@@ -24,9 +24,12 @@
 /* DEFINES                                                                                                            */
 /**********************************************************************************************************************/
 /* Key encapsulation mechanism */
-#define KYBER512
-/* #define KYBER768 */
+/* #define KYBER512 */
+ #define KYBER768 
 /* #define KYBER1024 */
+/* #define HQC128 */
+/* #define HQC192 */
+/* #define HQC256 */
 
 /* Digital signatures */
 #define DILITHIUM2
@@ -52,48 +55,87 @@
         #include "FsmSw_Kyber512_kem.h"
         #include "FsmSw_Kyber512_params.h"
         #include "FsmSw_Kyber512_indcpa.h"
-        #define KYBER_PUBLICKEYBYTES        KYBER512_PUBLICKEYBYTES
-        #define KYBER_SECRETKEYBYTES        KYBER512_SECRETKEYBYTES
-        #define KYBER_INDCPA_MSGBYTES       KYBER512_INDCPA_MSGBYTES
-        #define KYBER_CIPHERTEXTBYTES       KYBER512_CIPHERTEXTBYTES
-        #define KYBER_INDCPA_BYTES          KYBER512_INDCPA_BYTES
-        #define crypto_kem_keypair          FsmSw_Kyber512_crypto_kem_keypair
-        #define crypto_kem_enc              FsmSw_Kyber512_crypto_kem_enc
-        #define crypto_kem_dec              FsmSw_Kyber512_crypto_kem_dec
-        #define indcpa_enc                  FsmSw_Kyber512_indcpa_enc
-        #define indcpa_dec                  FsmSw_Kyber512_indcpa_dec
+        #define CRYPTO_ENC_PUBLICKEYBYTES        KYBER512_PUBLICKEYBYTES
+        #define CRYPTO_ENC_SECRETKEYBYTES        KYBER512_SECRETKEYBYTES
+        #define CRYPTO_ENC_SSBYTES               KYBER_SSBYTES
+        #define CRYPTO_ENC_CIPHERTEXTBYTES       KYBER512_CIPHERTEXTBYTES
+        #define KYBER_INDCPA_MSGBYTES            KYBER512_INDCPA_MSGBYTES
+        #define KYBER_INDCPA_BYTES               KYBER512_INDCPA_BYTES
+        #define crypto_kem_keypair               FsmSw_Kyber512_crypto_kem_keypair
+        #define crypto_kem_enc                   FsmSw_Kyber512_crypto_kem_enc
+        #define crypto_kem_dec                   FsmSw_Kyber512_crypto_kem_dec
+        #define indcpa_enc                       FsmSw_Kyber512_indcpa_enc
+        #define indcpa_dec                       FsmSw_Kyber512_indcpa_dec
 
 #elif (defined KYBER768)
         #include "FsmSw_CommonLib.h"
         #include "FsmSw_Kyber768_kem.h"
         #include "FsmSw_Kyber768_params.h"
         #include "FsmSw_Kyber768_indcpa.h"
-        #define KYBER_PUBLICKEYBYTES        KYBER768_PUBLICKEYBYTES
-        #define KYBER_SECRETKEYBYTES        KYBER768_SECRETKEYBYTES
-        #define KYBER_INDCPA_MSGBYTES       KYBER768_INDCPA_MSGBYTES
-        #define KYBER_CIPHERTEXTBYTES       KYBER768_CIPHERTEXTBYTES
-        #define KYBER_INDCPA_BYTES          KYBER768_INDCPA_BYTES
-        #define crypto_kem_keypair          FsmSw_Kyber768_crypto_kem_keypair
-        #define crypto_kem_enc              FsmSw_Kyber768_crypto_kem_enc
-        #define crypto_kem_dec              FsmSw_Kyber768_crypto_kem_dec
-        #define indcpa_enc                  FsmSw_Kyber768_indcpa_enc
-        #define indcpa_dec                  FsmSw_Kyber768_indcpa_dec
+        #define CRYPTO_ENC_PUBLICKEYBYTES        KYBER768_PUBLICKEYBYTES
+        #define CRYPTO_ENC_SECRETKEYBYTES        KYBER768_SECRETKEYBYTES
+        #define CRYPTO_ENC_SSBYTES               KYBER_SSBYTES
+        #define CRYPTO_ENC_CIPHERTEXTBYTES       KYBER768_CIPHERTEXTBYTES
+        #define KYBER_INDCPA_MSGBYTES            KYBER768_INDCPA_MSGBYTES
+        #define KYBER_INDCPA_BYTES               KYBER768_INDCPA_BYTES
+        #define crypto_kem_keypair               FsmSw_Kyber768_crypto_kem_keypair
+        #define crypto_kem_enc                   FsmSw_Kyber768_crypto_kem_enc
+        #define crypto_kem_dec                   FsmSw_Kyber768_crypto_kem_dec
+        #define indcpa_enc                       FsmSw_Kyber768_indcpa_enc
+        #define indcpa_dec                       FsmSw_Kyber768_indcpa_dec
 
 #elif (defined KYBER1024)
         #include "FsmSw_CommonLib.h"
         #include "FsmSw_Kyber1024_kem.h"
         #include "FsmSw_Kyber1024_params.h"
         #include "FsmSw_Kyber1024_indcpa.h"
-        #define KYBER_PUBLICKEYBYTES        KYBER1024_PUBLICKEYBYTES
-        #define KYBER_SECRETKEYBYTES        KYBER1024_SECRETKEYBYTES
-        #define KYBER_INDCPA_MSGBYTES       KYBER1024_INDCPA_MSGBYTES
-        #define KYBER_CIPHERTEXTBYTES       KYBER1024_CIPHERTEXTBYTES
-        #define KYBER_INDCPA_BYTES          KYBER1024_INDCPA_BYTES
-        #define crypto_kem_keypair          FsmSw_Kyber1024_crypto_kem_keypair
-        #define crypto_kem_enc              FsmSw_Kyber1024_crypto_kem_enc
-        #define crypto_kem_dec              FsmSw_Kyber1024_crypto_kem_dec
-        #define indcpa_enc                  FsmSw_Kyber1024_indcpa_enc
-        #define indcpa_dec                  FsmSw_Kyber1024_indcpa_dec
+        #define CRYPTO_ENC_PUBLICKEYBYTES        KYBER1024_PUBLICKEYBYTES
+        #define CRYPTO_ENC_SECRETKEYBYTES        KYBER1024_SECRETKEYBYTES
+        #define CRYPTO_ENC_SSBYTES               KYBER_SSBYTES
+        #define CRYPTO_ENC_CIPHERTEXTBYTES       KYBER1024_CIPHERTEXTBYTES
+        #define KYBER_INDCPA_MSGBYTES            KYBER1024_INDCPA_MSGBYTES
+        #define KYBER_INDCPA_BYTES               KYBER1024_INDCPA_BYTES
+        #define crypto_kem_keypair               FsmSw_Kyber1024_crypto_kem_keypair
+        #define crypto_kem_enc                   FsmSw_Kyber1024_crypto_kem_enc
+        #define crypto_kem_dec                   FsmSw_Kyber1024_crypto_kem_dec
+        #define indcpa_enc                       FsmSw_Kyber1024_indcpa_enc
+        #define indcpa_dec                       FsmSw_Kyber1024_indcpa_dec
+
+#elif (defined HQC128)
+        #include "FsmSw_CommonLib.h"
+        #include "FsmSw_Hqc128_kem.h"
+        #include "FsmSw_Hqc128_parameters.h"
+        #define CRYPTO_ENC_PUBLICKEYBYTES        HQC128_PUBLIC_KEY_BYTES
+        #define CRYPTO_ENC_SECRETKEYBYTES        2305
+        #define CRYPTO_ENC_CIPHERTEXTBYTES       4433
+        #define CRYPTO_ENC_SSBYTES               64
+        #define crypto_kem_keypair               FsmSw_Hqc128_Crypto_Kem_Keypair
+        #define crypto_kem_enc                   FsmSw_Hqc128_Crypto_Kem_Enc
+        #define crypto_kem_dec                   FsmSw_Hqc128_Crypto_Kem_Dec
+
+#elif (defined HQC192)
+        #include "FsmSw_CommonLib.h"
+        #include "FsmSw_Hqc192_kem.h"
+        #include "FsmSw_Hqc192_parameters.h"
+        #define CRYPTO_ENC_PUBLICKEYBYTES        HQC192_PUBLIC_KEY_BYTES
+        #define CRYPTO_ENC_SECRETKEYBYTES        4568
+        #define CRYPTO_ENC_CIPHERTEXTBYTES       8978
+        #define CRYPTO_ENC_SSBYTES               64
+        #define crypto_kem_keypair               FsmSw_Hqc192_Crypto_Kem_Keypair
+        #define crypto_kem_enc                   FsmSw_Hqc192_Crypto_Kem_Enc
+        #define crypto_kem_dec                   FsmSw_Hqc192_Crypto_Kem_Dec
+
+#elif (defined HQC256)
+        #include "FsmSw_CommonLib.h"
+        #include "FsmSw_Hqc256_kem.h"
+        #include "FsmSw_Hqc256_parameters.h"
+        #define CRYPTO_ENC_PUBLICKEYBYTES        HQC256_PUBLIC_KEY_BYTES
+        #define CRYPTO_ENC_SECRETKEYBYTES        7317
+        #define CRYPTO_ENC_CIPHERTEXTBYTES       14421
+        #define CRYPTO_ENC_SSBYTES               64
+        #define crypto_kem_keypair               FsmSw_Hqc256_Crypto_Kem_Keypair
+        #define crypto_kem_enc                   FsmSw_Hqc256_Crypto_Kem_Enc
+        #define crypto_kem_dec                   FsmSw_Hqc256_Crypto_Kem_Dec
 #endif
 
 #if (defined DILITHIUM2)
@@ -346,27 +388,32 @@
 void FsmSw_Crypto_KeyEncapsulationMechanismTest(void)
 {
     /* public key alice */
-    static uint8 pk_alice[KYBER_PUBLICKEYBYTES];
+    static uint8 pk_alice[CRYPTO_ENC_PUBLICKEYBYTES];
     /* secret key alice */
-    static uint8 sk_alice[KYBER_SECRETKEYBYTES];
+    static uint8 sk_alice[CRYPTO_ENC_SECRETKEYBYTES];
     /* public key bob */
-    static uint8 pk_bob[KYBER_PUBLICKEYBYTES];
+    static uint8 pk_bob[CRYPTO_ENC_PUBLICKEYBYTES];
     /* secret key bob */
-    static uint8 sk_bob[KYBER_SECRETKEYBYTES];
+    static uint8 sk_bob[CRYPTO_ENC_SECRETKEYBYTES];
     /* shared key alice */
-    static uint8 ss_alice[KYBER_SSBYTES];
+    static uint8 ss_alice[CRYPTO_ENC_SSBYTES];
     /* shared key bob */
-    static uint8 ss_bob[KYBER_SSBYTES];
+    static uint8 ss_bob[CRYPTO_ENC_SSBYTES];
+    /* cipher text */
+    static uint8 ct[CRYPTO_ENC_CIPHERTEXTBYTES];
+    
+    #if defined(KYBER512) || defined(KYBER768) || defined(KYBER1024)
+    
     /* input message */
     static uint8 inMsg[KYBER_INDCPA_MSGBYTES];
     /* output message */
     static uint8 outMsg[KYBER_INDCPA_MSGBYTES];
-    /* cipher text */
-    static uint8 ct[KYBER_CIPHERTEXTBYTES];
     /* cipher message */
     static uint8 cipherMsg[KYBER_INDCPA_BYTES];
     /* coins */
     static uint8 coins[KYBER_SYMBYTES];
+    
+    #endif
 
     /* generate key pair for alice */
     (void) crypto_kem_keypair(pk_alice, sk_alice);
@@ -374,11 +421,16 @@ void FsmSw_Crypto_KeyEncapsulationMechanismTest(void)
     /* generate key pair for bob */
     (void) crypto_kem_keypair(pk_bob, sk_bob);
 
+
+
     /* encapsulate */
     (void) crypto_kem_enc(ct, ss_alice, pk_bob);
-
+    
     /* decapsulate */
     (void) crypto_kem_dec(ss_bob, ct, sk_bob);
+    
+
+    #if defined(KYBER512) || defined(KYBER768) || defined(KYBER1024)
 
     /* generate message */
     (void) FsmSw_CommonLib_randombytes(inMsg, KYBER_INDCPA_MSGBYTES);
@@ -390,6 +442,8 @@ void FsmSw_Crypto_KeyEncapsulationMechanismTest(void)
 
     /* decrypt */
     indcpa_dec(outMsg, cipherMsg, sk_bob);
+    
+    #endif
 }
 
 /***********************************************************************************************************************
