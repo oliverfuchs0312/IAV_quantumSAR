@@ -8,21 +8,22 @@ E-Mail: quantumsar@iav.de
 There was no security risk analysis like TARA or similar carried out for IAV quantumSAR. The post-quantum cryptographic algorithms itself were evaluated by NIST.
 
 ## Content
-The base of IAV quantumSAR is the PQCleanAutomotive repository. It includes the following post-quantum cryptographic algorithms:
+The base of IAV quantumSAR is the [PQCleanAutomotive](https://github.com/iavofficial/PQCleanAutomotive) repository. It includes the following post-quantum cryptographic algorithms:
 
 * CRYSTALS-KYBER
 * CRYSTALS-DILITHIUM
 * SPHINCS+
 * FALCON
+* HQC
 
 ## Implementation
-For the integration of IAV quantumSAR, the file Crypto.c contains an example of the use of the CRYSTALS-KYBER, CRYSTALS-DILITHIUM and SPHINCS+ algorithm.
+For the integration of IAV quantumSAR, the file Crypto.c contains an example of the use of the CRYSTALS-KYBER, CRYSTALS-DILITHIUM, SPHINCS+ and HQC algorithm.
 
 In the SPHINCS+ algorithm, dynamic arrays had to be replaced by static arrays in various functions for the microcontroller implementation.
 
 ## License
 
-Copyright [2024] [IAV GmbH]
+Copyright [2026] [IAV GmbH]
 
 Licensed under the Apache License, Version 2.0 (the "License");\
 you may not use this file except in compliance with the License.\
@@ -38,7 +39,15 @@ limitations under the License.
 
 ## AUTOSAR
 
-IAV quantumSAR should support the AUTOSAR Version [R22-11](https://www.autosar.org/fileadmin/standards/R22-11/CP/AUTOSAR_SWS_CryptoDriver.pdf). 
+IAV quantumSAR should support the AUTOSAR Version [R23-11](https://www.autosar.org/fileadmin/standards/R23-11/CP/AUTOSAR_CP_SWS_CryptoDriver.pdf). 
 
 ## MISRA
 IAV quantumSAR and the post-quantum cryptographic algorithms are checked with the 2012 version of [MISRA](https://misra.org.uk/app/uploads/2021/06/MISRA-C-2012-Permits-First-Edition.pdf). Not all MISRA findings could be resolved. An explanation has been written in the relevant places.
+
+## Doxygen
+The post-quantum cryptographic algorithms have been labelled with doxygen comments for documentation reasons.
+
+## Measurement results
+Our measurements of the post-quantum cryptographic algorithms' running times and memory consumption are documented in our open access paper for the 23rd escar Europe 2025:\
+\
+&nbsp;&nbsp;&nbsp;https://hss-opus.ub.ruhr-uni-bochum.de/opus4/frontdoor/index/index/year/2025/docId/13649
