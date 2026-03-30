@@ -10,16 +10,16 @@ There was no security risk analysis like TARA or similar carried out for IAV qua
 ## Content
 The base of IAV quantumSAR is the [PQCleanAutomotive](https://github.com/iavofficial/PQCleanAutomotive) repository. It includes the following post-quantum cryptographic algorithms:
 
-* CRYSTALS-KYBER
-* CRYSTALS-DILITHIUM
-* SPHINCS+
-* FALCON
+* ML‑KEM (CRYSTALS-KYBER)
+* ML‑DSA (CRYSTALS-DILITHIUM)
+* SLH‑DSA (SPHINCS+)
+* FN‑DSA (FALCON)
 * HQC
 
 ## Implementation
-For the integration of IAV quantumSAR, the file Crypto.c contains an example of the use of the CRYSTALS-KYBER, CRYSTALS-DILITHIUM, SPHINCS+ and HQC algorithm.
+For the integration of IAV quantumSAR, the file Crypto.c contains an example of the use of the ML-KEM, ML-DSA, SLH-DSA, FN‑DSA and HQC algorithm.
 
-In the SPHINCS+ algorithm, dynamic arrays had to be replaced by static arrays in various functions for the microcontroller implementation.
+In the SLH-DSA algorithm, dynamic arrays had to be replaced by static arrays in various functions for the microcontroller implementation.
 
 ## License
 
